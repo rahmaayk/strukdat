@@ -1,0 +1,64 @@
+#include <iostream>
+#define MAX 20 //maksimum data queue
+using namespace std;
+//Deklarasi struct antrian
+
+struct Queue {
+	int front, rear, data[MAX];
+}Q;
+//cek apakah antrian penuh
+bool isFull() {
+	return Q.rear == MAX;
+}
+
+//cek apakah antrian kosong
+bool isEmpty() {
+	return Q.rear == 0;
+}
+//Menampilkan Queue
+void printQueue() {
+	if (isEmpty()) {
+    cout << "Bagasi kosong"<<endl;
+	}
+	else {
+		cout<<"----------------\n";
+		cout << "    QUEUE"<<endl;
+		cout<<"----------------\n";
+		for (int i = Q.front; i < Q.rear; i++)
+		//menambahkan koma jika data tidak terdapat di antrian pertama
+			cout << Q.data[i] << ((Q.rear-1 == i) ? "" : "\n");
+  }
+}
+//manambahkan data ke antrian
+void enqueue() {
+	if (isFull())
+	{
+		cout << "Bagasi penuh!"<<endl;
+	}
+	else {
+		int data;
+		//menambahkan data ke antrian
+		cout << "Masukkan Nomor Barang : ";cin >> data;
+		Q.data[Q.rear] = data;
+		//menempatkan tail pada elemen data terakhir yang ditambahkan
+		Q.rear++;
+		cout << "Data ditambahkan\n";
+		printQueue();
+	}
+}
+// mengambil data dari antrian
+void dequeue() {
+	if (isEmpty())
+	{
+		cout << "Bagasi sudah kosong"<<endl;
+	}
+	else{
+		cout << "Mengambil barang dengan nomor \"" << Q.data[Q.front] << "\"..." << endl;
+		//menggeser antrian data ke head
+		for (int i = Q.front; i < Q.rear; i++)
+			Q.data[i] = Q.data[i + 1];
+		//menempatkan tail pada data terakhir yang digeser
+		Q.rear--;
+		printQueue();
+	}
+}

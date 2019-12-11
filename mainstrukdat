@@ -11,9 +11,9 @@ int main() {
 	do
 	{
 		//Tampilan menu
-		cout << "---------------------------\n"
-			<< "   Program Bagasi Pesawat\n"
-			<< "----------------------------\n"
+		cout << "--------------------------------\n"
+			<< "Program Antrian Pengiriman Barang\n"
+			<< "---------------------------------\n"
 			<< " [1] Input Barang                \n"
 			<< " [2] Ambil Barang                \n"
 			<< " [3] Keluar               \n\n"

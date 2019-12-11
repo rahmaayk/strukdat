@@ -20,7 +20,7 @@ void printQueue() {
     cout << "Antrian kosong"<<endl;
 	}
 	else {
-		cout << "QUEUE : ";
+		cout << " QUEUE ";
 		for (int i = Q.front; i < Q.rear; i++)
 		//menambahkan koma jika data tidak terdapat di antrian pertama
 			cout << Q.data[i] << ((Q.rear-1 == i) ? "" : ",");
@@ -36,7 +36,7 @@ void enqueue() {
 	else {
 		int data;
 		//menambahkan data ke antrian
-		cout << "Masukkan Data : ";cin >> data;
+		cout << "Masukkan nomor barang : ";cin >> data;
 		Q.data[Q.rear] = data;
 		//menempatkan tail pada elemen data terakhir yang ditambahkan
 		Q.rear++;
@@ -51,7 +51,7 @@ void dequeue() {
 		cout << "Antrian masih kosong"<<endl;
 	}
 	else{
-		cout << "Mengambil data \"" << Q.data[Q.front] << "\"..." << endl;
+		cout << "Mengambil barang dengan nomor \"" << Q.data[Q.front] << "\"..." << endl;
 		//menggeser antrian data ke head
 		for (int i = Q.front; i < Q.rear; i++)
 			Q.data[i] = Q.data[i + 1];

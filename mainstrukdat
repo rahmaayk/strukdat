@@ -1,4 +1,36 @@
-#include<iostream>
-using namespace std;TRENDING
-int main() 
-{
+#include <iostream>
+#include "queue.h"
+#include <ctime>
+using namespace std;
+
+int main() {
+	int choose;
+	time_t now = time(0);
+
+   tm *ltm = localtime(&now);
+	do
+	{
+		//Tampilan menu
+		cout << "---------------------------\n"
+			<< "   Program Bagasi Pesawat\n"
+			<< "----------------------------\n"
+			<< " [1] Input Barang                \n"
+			<< " [2] Ambil Barang                \n"
+			<< " [3] Keluar               \n\n"
+			<< "----------------------------\n"
+			<< "Masukkan pilihan : "; cin >> choose;
+		switch (choose)
+		{
+		case 1:
+			enqueue();cout<<"\t\t-----\t\t"<<ltm->tm_hour << ":"<<ltm->tm_min << ":"<< 1 + ltm->tm_sec << endl;
+			break;
+		case 2:
+			dequeue();
+			break;
+		default:
+			cout << "Pilihan tidak tersedia";
+			break;
+		}
+	} while (choose !=3);
+	return 0;
+}

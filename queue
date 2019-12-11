@@ -18,7 +18,7 @@ bool isEmpty() {
 //Menampilkan Queue
 void printQueue() {
 	if (isEmpty()) {
-    cout << "Bagasi kosong"<<endl;
+    cout << "Antrian kosong"<<endl;
 	}
 	else {
 		cout<<"----------------\n";
@@ -33,7 +33,7 @@ void printQueue() {
 void enqueue() {
 	if (isFull())
 	{
-		cout << "Bagasi penuh!"<<endl;
+		cout << "Antrian penuh!"<<endl;
 	}
 	else {
 		int data;
@@ -50,7 +50,7 @@ void enqueue() {
 void dequeue() {
 	if (isEmpty())
 	{
-		cout << "Bagasi sudah kosong"<<endl;
+		cout << "Antrian sudah kosong"<<endl;
 	}
 	else{
 		cout << "Mengambil barang dengan nomor \"" << Q.data[Q.front] << "\"..." << endl;

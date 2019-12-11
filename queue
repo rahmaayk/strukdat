@@ -20,10 +20,12 @@ void printQueue() {
     cout << "Antrian kosong"<<endl;
 	}
 	else {
-		cout << " QUEUE ";
+		cout<<"---------------------\n";
+		cout << "      QUEUE "<<endl;
+		cout<<"---------------------\n";
 		for (int i = Q.front; i < Q.rear; i++)
 		//menambahkan koma jika data tidak terdapat di antrian pertama
-			cout << Q.data[i] << ((Q.rear-1 == i) ? "" : ",");
+			cout << Q.data[i] << ((Q.rear-1 == i) ? "" :);
 		cout << endl;
   }
 }

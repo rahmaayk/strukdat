@@ -11,7 +11,7 @@ int main() {
 	do
 	{
 		//Tampilan menu
-		cout << "--------------------------------\n"
+		cout << "------------------------------------\n"
 			<< "Program Antrian Pengiriman Barang\n"
 			<< "---------------------------------\n"
 			<< " [1] Input Barang                \n"
@@ -22,7 +22,8 @@ int main() {
 		switch (choose)
 		{
 		case 1:
-			enqueue();cout<<"\t\t-----\t\t"<<ltm->tm_hour << ":"<<ltm->tm_min << ":"<< 1 + ltm->tm_sec << endl;
+			enqueue();cout<<"\t\t-----\t\t"<<ltm->tm_hour << ":"<<ltm->tm_min << ":"<< 1 + ltm->tm_sec;
+			cout<<"\t"<<ltm->tm_mday<<"-"<<1+ltm->tm_mon<<"-"<<1900 + ltm->tm_year<<endl;
 			break;
 		case 2:
 			dequeue();
